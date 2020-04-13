@@ -1,6 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./route/index');
 const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb');
 
 const init = async () => {
   const server = Hapi.server({
@@ -9,8 +10,18 @@ const init = async () => {
   });
   server.route(routes);
   await server.start();
+  console.log('Server is listening at port 3000')
 
-  mongoose.connect(server, { useNewUrlParser: true, useUnifiedTopology: true });
+  const uri = "mongodb://localhost/blog";
+
+
+  try {
+    // Connect to the MongoDB cluster
+    await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+  } catch (e) {
+    console.error(e);
+  }
 };
 
 init();

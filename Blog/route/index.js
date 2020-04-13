@@ -1,10 +1,12 @@
 const commentRoute = require('./comment.route');
+const articleRoute = require('./article.route');
 
-const routes =
-  commentRoute
+const routes = [
+  ...commentRoute,
+  ...articleRoute
 
+]
   ;
 
-module.exports = {
+module.exports =
   routes
-}

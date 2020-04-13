@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
+    "db-migrate": "^0.11.6",
     "joi": "^14.3.1",
+    "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
     "nodemon": "^2.0.3"
   }

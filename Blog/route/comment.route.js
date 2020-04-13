@@ -20,7 +20,7 @@ const commentRoute = [
   },
   {
     method: "GET",
-    path: '/comments/{userId}',
+    path: '/comments/votes/{userId}',
     config: {
       description: 'Get number of votes per comment'
     },
@@ -39,6 +39,5 @@ const commentRoute = [
   }
 ];
 
-module.exports = {
+module.exports =
   commentRoute
-}
